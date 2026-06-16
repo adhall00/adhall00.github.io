@@ -212,3 +212,22 @@ footer {
   top: -25px;
   right: 20px;
 }
+
+.publications-list {
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.publications-list li {
+  margin-bottom: 1.2rem;
+}
+
+.publications-list a {
+  color: #4f6f9f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.publications-list a:hover {
+  text-decoration: underline;
+}
