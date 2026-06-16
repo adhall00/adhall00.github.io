@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna's Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating clouds -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="cloud cloud4"></div>
+
+  <header>
+    <h1>Anna's Corner of the Internet ☁️</h1>
+    <p class="subtitle">science, baking, triathlon, and a little whimsy</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-button active" onclick="showTab('about')">All About Anna</button>
+    <button class="tab-button" onclick="showTab('baking')">Baking my way through Grad School</button>
+    <button class="tab-button" onclick="showTab('triathlon')">My Triathlon Journey</button>
+    <button class="tab-button" onclick="showTab('publications')">Publications</button>
+    <button class="tab-button" onclick="showTab('resume')">Resume/CV</button>
+    <button class="tab-button" onclick="showTab('gallery')">Photo Gallery</button>
+  </nav>
+
+  <main>
+    <section id="about" class="tab-content active">
+      <h2>All About Anna</h2>
+      <p>
+        Hi! I’m Anna, a graduate student in atmospheric science studying
+        stratosphere–troposphere exchange, ozone transport, and climate variability.
+        I also love baking, endurance sports, and building a life full of curiosity.
+      </p>
+      <p>
+        This website is a little mix of my academic life and the things that keep me grounded and joyful outside of research.
+      </p>
+    </section>
+
+    <section id="baking" class="tab-content">
+      <h2>Baking my way through Grad School</h2>
+      <p>
+        Baking has been one of my favorite creative outlets during grad school.
+        From stress-baking cookies to trying ambitious cakes on weekends, this is
+        where I’ll share favorite recipes, baking photos, and little stories.
+      </p>
+      <ul>
+        <li>Favorite things to bake: cookies, banana bread, cupcakes</li>
+        <li>Current goal: perfecting a signature dessert</li>
+        <li>Grad school fuel: cinnamon rolls and coffee</li>
+      </ul>
+    </section>
+
+    <section id="triathlon" class="tab-content">
+      <h2>My Triathlon Journey</h2>
+      <p>
+        I’m also on a triathlon journey! This section can include race updates,
+        training reflections, milestones, and what I’m learning along the way.
+      </p>
+      <ul>
+        <li>Swim progress</li>
+        <li>Bike training notes</li>
+        <li>Run workouts and race goals</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="tab-content">
+      <h2>Publications</h2>
+      <p>Here are some of my publications and research outputs:</p>
+      <ul>
+        <li>Paper Title 1 – Journal Name – Year</li>
+        <li>Paper Title 2 – Journal Name – Year</li>
+        <li>Conference presentation or manuscript in progress</li>
+      </ul>
+    </section>
+
+    <section id="resume" class="tab-content">
+      <h2>Resume / CV</h2>
+      <p>
+        You can link your CV here:
+      </p>
+      <p>
+        <a href="Anna_Hall_CV.pdf" target="_blank" class="cv-link">View My CV</a>
+      </p>
+    </section>
+
+    <section id="gallery" class="tab-content">
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="images/photo1.jpg" alt="Gallery photo 1">
+        <img src="images/photo2.jpg" alt="Gallery photo 2">
+        <img src="images/photo3.jpg" alt="Gallery photo 3">
+        <img src="images/photo4.jpg" alt="Gallery photo 4">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ☁️ and curiosity</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
