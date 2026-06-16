@@ -231,3 +231,18 @@ footer {
 .publications-list a:hover {
   text-decoration: underline;
 }
+.pdf-container {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 800px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: white;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
