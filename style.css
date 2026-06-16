@@ -231,6 +231,11 @@ footer {
 .publications-list a:hover {
   text-decoration: underline;
 }
+
+#resume {
+  width: 100%;
+  box-sizing: border-box;
+}
 .pdf-container {
   margin-top: 1.5rem;
   width: 100%;
