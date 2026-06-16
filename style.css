@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: #dff4ff;
+  color: #3d4b63;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  margin-bottom: 0.3rem;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #5d7393;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tab-button {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.tab-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.tab-button.active {
+  background: #fff7fb;
+  border-color: #f4cce2;
+}
+
+main {
+  max-width: 950px;
+  margin: 1rem auto 3rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tab-content {
+  display: none;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.cv-link {
+  display: inline-block;
+  background: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #3d4b63;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #5d7393;
+  position: relative;
+  z-index: 2;
+}
+
+/* Clouds */
+.cloud {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 140px;
+  height: 60px;
+  top: 10%;
+  left: 10%;
+}
+
+.cloud1::before {
+  width: 60px;
+  height: 60px;
+  top: -20px;
+  left: 20px;
+}
+
+.cloud1::after {
+  width: 70px;
+  height: 70px;
+  top: -25px;
+  right: 20px;
+}
+
+.cloud2 {
+  width: 180px;
+  height: 75px;
+  top: 25%;
+  left: 70%;
+}
+
+.cloud2::before {
+  width: 70px;
+  height: 70px;
+  top: -25px;
+  left: 25px;
+}
+
+.cloud2::after {
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  right: 25px;
+}
+
+.cloud3 {
+  width: 130px;
+  height: 55px;
+  top: 65%;
+  left: 15%;
+}
+
+.cloud3::before {
+  width: 55px;
+  height: 55px;
+  top: -18px;
+  left: 18px;
+}
+
+.cloud3::after {
+  width: 65px;
+  height: 65px;
+  top: -22px;
+  right: 18px;
+}
+
+.cloud4 {
+  width: 160px;
+  height: 65px;
+  top: 75%;
+  left: 75%;
+}
+
+.cloud4::before {
+  width: 65px;
+  height: 65px;
+  top: -20px;
+  left: 20px;
+}
+
+.cloud4::after {
+  width: 75px;
+  height: 75px;
+  top: -25px;
+  right: 20px;
+}
