@@ -52,3 +52,89 @@ clouds.forEach((cloud) => {
 
   animate();
 });
+// Race countdown and automatic current-month calendar
+const raceDate = new Date(2026, 6, 19); 
+// Month is zero-indexed in JavaScript, so 6 = July
+
+function updateRaceCountdown() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const race = new Date(raceDate);
+  race.setHours(0, 0, 0, 0);
+
+  const diffTime = race - today;
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  const countdownText = document.getElementById("countdown-text");
+
+  if (!countdownText) return;
+
+  if (diffDays > 1) {
+    countdownText.textContent = `${diffDays} days until race day!`;
+  } else if (diffDays === 1) {
+    countdownText.textContent = "1 day until race day!";
+  } else if (diffDays === 0) {
+    countdownText.textContent = "Race day is today!";
+  } else {
+    countdownText.textContent = "Race day has passed — you did it!";
+  }
+}
+
+function buildCalendar() {
+  const calendar = document.getElementById("calendar");
+  const calendarMonth = document.getElementById("calendar-month");
+
+  if (!calendar || !calendarMonth) return;
+
+  calendar.innerHTML = "";
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  calendarMonth.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement("div");
+    emptyCell.classList.add("calendar-day", "empty");
+    calendar.appendChild(emptyCell);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dayCell = document.createElement("div");
+    dayCell.classList.add("calendar-day");
+    dayCell.textContent = day;
+
+    const isToday =
+      day === today.getDate() &&
+      currentMonth === today.getMonth() &&
+      currentYear === today.getFullYear();
+
+    const isRaceDay =
+      day === raceDate.getDate() &&
+      currentMonth === raceDate.getMonth() &&
+      currentYear === raceDate.getFullYear();
+
+    if (isToday) {
+      dayCell.classList.add("today");
+    }
+
+    if (isRaceDay) {
+      dayCell.classList.add("race-day");
+    }
+
+    calendar.appendChild(dayCell);
+  }
+}
+
+updateRaceCountdown();
+buildCalendar();
