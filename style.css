@@ -565,12 +565,11 @@ footer {
 }
 .cupcake-month {
   position: absolute;
-  top: 10px;
-  left: 12px;
+  top: 8px;
+  left: 10px;
 
   font-family: "Brush Script MT", cursive;
   font-size: 7rem;
-  font-weight: normal;
   color: white;
 
   transform: rotate(-6deg);
@@ -581,4 +580,5 @@ footer {
     0 0 8px rgba(0, 0, 0, 0.25);
 
   pointer-events: none;
+  z-index: 5;
 }
