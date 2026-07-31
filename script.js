@@ -98,19 +98,29 @@ function buildCalendar() {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  calendarMonth.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+  calendarMonth.textContent =
+    `${monthNames[currentMonth]} ${currentYear}`;
 
-  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const firstDay =
+    new Date(currentYear, currentMonth, 1).getDay();
+
+  const daysInMonth =
+    new Date(currentYear, currentMonth + 1, 0).getDate();
 
   for (let i = 0; i < firstDay; i++) {
     const emptyCell = document.createElement("div");
-    emptyCell.classList.add("calendar-day", "empty");
+
+    emptyCell.classList.add(
+      "calendar-day",
+      "empty"
+    );
+
     calendar.appendChild(emptyCell);
   }
 
   for (let day = 1; day <= daysInMonth; day++) {
     const dayCell = document.createElement("div");
+
     dayCell.classList.add("calendar-day");
     dayCell.textContent = day;
 
@@ -134,13 +144,22 @@ function buildCalendar() {
 
     calendar.appendChild(dayCell);
   }
-  document.querySelectorAll(".flip-card").forEach((card) => {
+}
+
+
+// Baking flip card
+document.querySelectorAll(".flip-card").forEach((card) => {
   card.addEventListener("click", () => {
-    const isFlipped = card.classList.toggle("is-flipped");
-    card.setAttribute("aria-pressed", String(isFlipped));
+    const isFlipped =
+      card.classList.toggle("is-flipped");
+
+    card.setAttribute(
+      "aria-pressed",
+      String(isFlipped)
+    );
   });
 });
-}
+
 
 updateRaceCountdown();
 buildCalendar();
