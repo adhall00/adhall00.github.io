@@ -566,13 +566,13 @@ footer {
 .cupcake-month {
   position: absolute;
   top: 4px;
-  left: 8px;
+  right: 8px;
 
   font-family: "Brush Script MT", cursive;
   font-size: 2rem;
   color: white;
 
-  transform-origin: top left;
+  transform-origin: top right;
 
   text-shadow:
     0 2px 5px rgba(0, 0, 0, 0.55),
