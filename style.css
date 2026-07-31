@@ -428,14 +428,18 @@ footer {
    ========================================================= */
 
 .baking-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 230px;
-  align-items: center;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .baking-text {
-  min-width: 0;
+  width: 100%;
+}
+
+.flip-card {
+  margin: 0;
 }
 
 .flip-card {
