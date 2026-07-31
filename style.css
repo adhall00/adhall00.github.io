@@ -422,34 +422,30 @@ footer {
   font-weight: bold;
   font-family: Arial, sans-serif;
 }
+
 /* =========================================================
-   BAKING INTRO
+   SMALL BAKING FLIP CARD
    ========================================================= */
 
 .baking-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+  grid-template-columns: minmax(0, 1fr) 230px;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .baking-text {
   min-width: 0;
 }
 
-
-/* =========================================================
-   FLIP CARD
-   ========================================================= */
-
 .flip-card {
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 4 / 5;
+  width: 230px;
+  height: 290px;
 
   padding: 0;
-  border: 0;
-  border-radius: 18px;
+  border: none;
+  border-radius: 24px;
+  overflow: hidden;
 
   background: transparent;
   cursor: pointer;
@@ -466,23 +462,16 @@ footer {
   width: 100%;
   height: 100%;
 
-  border-radius: inherit;
+  border-radius: 24px;
 
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
 }
 
-
-/* Flip on hover, keyboard focus, or click */
-
-.flip-card:hover .flip-card-inner,
-.flip-card:focus-visible .flip-card-inner,
+/* Flip only when clicked */
 .flip-card.is-flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
-
-
-/* Front and back */
 
 .flip-card-front,
 .flip-card-back {
@@ -490,14 +479,17 @@ footer {
   inset: 0;
 
   display: flex;
-  overflow: hidden;
 
-  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 24px;
+  overflow: hidden;
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 .flip-card-front {
@@ -507,63 +499,65 @@ footer {
 .flip-card-front img {
   width: 100%;
   height: 100%;
+
+  display: block;
   object-fit: cover;
+
+  border-radius: 24px;
 }
 
 .flip-card-back {
   align-items: center;
   justify-content: center;
 
-  padding: 1.75rem;
   box-sizing: border-box;
+  padding: 1.25rem;
 
   background: #7c4f3a;
-  color: #ffffff;
-
+  color: white;
   text-align: center;
 
   transform: rotateY(180deg);
 }
 
+.card-content {
+  width: 100%;
+}
+
 .card-content h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.card-content p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .card-content p:last-child {
   margin-bottom: 0;
 }
 
-
-/* Small instruction displayed over the image */
-
 .flip-hint {
   position: absolute;
-  right: 0.8rem;
-  bottom: 0.8rem;
+  right: 0.65rem;
+  bottom: 0.65rem;
 
-  padding: 0.4rem 0.7rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 999px;
 
   background: rgba(0, 0, 0, 0.65);
-  color: #ffffff;
+  color: white;
 
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   line-height: 1;
 }
-
-
-/* Visible keyboard outline */
 
 .flip-card:focus-visible {
   outline: 3px solid #7c4f3a;
   outline-offset: 5px;
 }
-
-
-/* =========================================================
-   MOBILE LAYOUT
-   ========================================================= */
 
 @media (max-width: 750px) {
   .baking-intro {
@@ -571,16 +565,8 @@ footer {
   }
 
   .flip-card {
-    width: min(100%, 320px);
-    margin-inline: auto;
-  }
-}
-
-
-/* Respect reduced-motion preferences */
-
-@media (prefers-reduced-motion: reduce) {
-  .flip-card-inner {
-    transition: none;
+    width: 220px;
+    height: 280px;
+    margin: 0 auto;
   }
 }
