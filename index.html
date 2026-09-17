@@ -19,14 +19,15 @@
     <p class="subtitle">science, baking, swimming, and a little whimsy</p>
   </header>
 
-  <nav class="tabs">
-    <button class="tab-button active" onclick="showTab('about')">All About Anna</button>
-    <button class="tab-button" onclick="showTab('baking')">Baking my way through Grad School</button>
-    <button class="tab-button" onclick="showTab('triathlon')">My Triathlon Journey</button>
-    <button class="tab-button" onclick="showTab('publications')">Publications</button>
-    <button class="tab-button" onclick="showTab('resume')">Resume/CV</button>
-    <button class="tab-button" onclick="showTab('gallery')">Photo Gallery</button>
-  </nav>
+ <nav class="tabs">
+  <button class="tab-button active" data-tab="about">All About Anna</button>
+  <button class="tab-button" data-tab="baking">Baking my way through Grad School</button>
+  <button class="tab-button" data-tab="triathlon">My Triathlon Journey</button>
+  <button class="tab-button" data-tab="publications">Publications</button>
+  <button class="tab-button" data-tab="resume">Resume/CV</button>
+  <button class="tab-button" data-tab="gallery">Photo Gallery</button>
+  <button class="tab-button" data-tab="fu-liou">Fu-Liou Model</button>
+</nav>
 
   <main>
     <section id="about" class="tab-content active">
@@ -288,14 +289,15 @@
           <figcaption>Tasti 2023 (Taipei, Taiwan)</figcaption>
         </figure>
       </div>
-    </section>
-      <section id="Fu-Liou Model How To" class="tab-content">
+<section id="fu-liou" class="tab-content">
   <div class="fu-liou-model-intro">
-  <div class="model-text">
+    <div class="model-text">
+
       <h2>How to run the Fu-Liou Model</h2>
 
       <p>
-        I work with Dr. Qiang Fu (the Fu part of Fu-Liou) I am going to try and demonstrate how to run the Fu-Liou RTM.
+        I work with Dr. Qiang Fu (the Fu part of Fu-Liou). I am going to try
+        and demonstrate how to run the Fu-Liou RTM.
         I don't really know how to do this yet, but we will learn together...
       </p>
 
@@ -303,6 +305,8 @@
         Welcome to "How long does it actually take?" It is 2 pm on September 17th, 2026.
       </p>
     </div>
+  </div>
+</section>
   </main>
 
   <footer>
