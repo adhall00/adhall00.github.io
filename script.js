@@ -1,21 +1,77 @@
-function showTab(tabId) {
-  const contents = document.querySelectorAll(".tab-content");
-  const buttons = document.querySelectorAll(".tab-button");
+// ============================================================
+// TAB NAVIGATION + CHROME BACK/FORWARD BUTTON
+// ============================================================
 
-  contents.forEach(content => content.classList.remove("active"));
-  buttons.forEach(button => button.classList.remove("active"));
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
 
-  document.getElementById(tabId).classList.add("active");
+function showTab(tabId, addToHistory = true) {
+  const selectedTab = document.getElementById(tabId);
 
-  const clickedButton = [...buttons].find(btn => btn.textContent.replace(/\s+/g, " ").includes(
-    document.getElementById(tabId).querySelector("h2").textContent.split("/")[0].trim()
-  ));
+  if (!selectedTab) return;
 
-  if (clickedButton) {
-    clickedButton.classList.add("active");
+  // Hide all tabs
+  tabContents.forEach(content => {
+    content.classList.remove("active");
+  });
+
+  // Deactivate all buttons
+  tabButtons.forEach(button => {
+    button.classList.remove("active");
+  });
+
+  // Show selected tab
+  selectedTab.classList.add("active");
+
+  // Highlight selected button
+  tabButtons.forEach(button => {
+    if (button.dataset.tab === tabId) {
+      button.classList.add("active");
+    }
+  });
+
+  // Add tab to browser history
+  if (addToHistory) {
+    history.pushState(
+      { tab: tabId },
+      "",
+      `#${tabId}`
+    );
   }
 }
 
+
+// Clicking a tab
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    showTab(button.dataset.tab);
+  });
+});
+
+
+// Chrome Back / Forward buttons
+window.addEventListener("popstate", () => {
+  const tabId =
+    window.location.hash.substring(1) || "home";
+
+  showTab(tabId, false);
+});
+
+
+// Load correct tab if page is opened with a hash
+window.addEventListener("DOMContentLoaded", () => {
+  const tabId =
+    window.location.hash.substring(1) || "home";
+
+  showTab(tabId, false);
+
+  // Make sure the starting page has a history state
+  history.replaceState(
+    { tab: tabId },
+    "",
+    `#${tabId}`
+  );
+});
 // Better button activation
 document.querySelectorAll(".tab-button").forEach(button => {
   button.addEventListener("click", function () {
@@ -163,45 +219,3 @@ document.querySelectorAll(".flip-card").forEach((card) => {
 
 updateRaceCountdown();
 buildCalendar();
-const tabButtons = document.querySelectorAll(".tab-button");
-const tabContents = document.querySelectorAll(".tab-content");
-
-function showTab(tabId, addToHistory = true) {
-  tabButtons.forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.tab === tabId
-    );
-  });
-
-  tabContents.forEach(content => {
-    content.classList.toggle(
-      "active",
-      content.id === tabId
-    );
-  });
-
-  if (addToHistory) {
-    history.pushState(
-      { tab: tabId },
-      "",
-      `#${tabId}`
-    );
-  }
-}
-
-tabButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    showTab(button.dataset.tab);
-  });
-});
-
-window.addEventListener("popstate", () => {
-  const tabId = window.location.hash.substring(1) || "home";
-  showTab(tabId, false);
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const tabId = window.location.hash.substring(1) || "home";
-  showTab(tabId, false);
-});
