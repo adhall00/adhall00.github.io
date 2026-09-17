@@ -49,7 +49,7 @@ tabButtons.forEach(button => {
 });
 
 
-// Chrome Back / Forward button
+// Chrome Back / Forward buttons
 window.addEventListener("popstate", () => {
   const tabId =
     window.location.hash.substring(1) || "about";
@@ -58,7 +58,7 @@ window.addEventListener("popstate", () => {
 });
 
 
-// When the website initially loads
+// When website initially loads
 window.addEventListener("DOMContentLoaded", () => {
   const tabId =
     window.location.hash.substring(1) || "about";
@@ -72,42 +72,41 @@ window.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-  showTab(tabId, false);
 
-  // Make sure the starting page has a history state
-  history.replaceState(
-    { tab: tabId },
-    "",
-    `#${tabId}`
-  );
-});
-// Better button activation
-document.querySelectorAll(".tab-button").forEach(button => {
-  button.addEventListener("click", function () {
-    document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-    this.classList.add("active");
-  });
-});
+// ============================================================
+// CLOUD BOUNCING ANIMATION
+// ============================================================
 
-// Cloud bouncing animation
 const clouds = document.querySelectorAll(".cloud");
 
 clouds.forEach((cloud) => {
   let x = cloud.offsetLeft;
   let y = cloud.offsetTop;
-  let dx = (Math.random() * 1.2 + 0.4) * (Math.random() < 0.5 ? 1 : -1);
-  let dy = (Math.random() * 1.2 + 0.4) * (Math.random() < 0.5 ? 1 : -1);
+
+  let dx =
+    (Math.random() * 1.2 + 0.4) *
+    (Math.random() < 0.5 ? 1 : -1);
+
+  let dy =
+    (Math.random() * 1.2 + 0.4) *
+    (Math.random() < 0.5 ? 1 : -1);
 
   function animate() {
     const rect = cloud.getBoundingClientRect();
+
     const maxX = window.innerWidth - rect.width;
     const maxY = window.innerHeight - rect.height;
 
     x += dx;
     y += dy;
 
-    if (x <= 0 || x >= maxX) dx *= -1;
-    if (y <= 0 || y >= maxY) dy *= -1;
+    if (x <= 0 || x >= maxX) {
+      dx *= -1;
+    }
+
+    if (y <= 0 || y >= maxY) {
+      dy *= -1;
+    }
 
     cloud.style.left = `${x}px`;
     cloud.style.top = `${y}px`;
@@ -117,63 +116,116 @@ clouds.forEach((cloud) => {
 
   animate();
 });
-// Race countdown and automatic current-month calendar
-const raceDate = new Date(2026, 6, 19); 
+
+
+// ============================================================
+// RACE COUNTDOWN
+// ============================================================
+
+const raceDate = new Date(2026, 6, 19);
 // Month is zero-indexed in JavaScript, so 6 = July
 
 function updateRaceCountdown() {
   const today = new Date();
+
   today.setHours(0, 0, 0, 0);
 
   const race = new Date(raceDate);
+
   race.setHours(0, 0, 0, 0);
 
   const diffTime = race - today;
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-  const countdownText = document.getElementById("countdown-text");
+  const diffDays =
+    Math.ceil(
+      diffTime /
+      (1000 * 60 * 60 * 24)
+    );
+
+  const countdownText =
+    document.getElementById("countdown-text");
 
   if (!countdownText) return;
 
   if (diffDays > 1) {
-    countdownText.textContent = `${diffDays} days until race day!`;
+    countdownText.textContent =
+      `${diffDays} days until race day!`;
+
   } else if (diffDays === 1) {
-    countdownText.textContent = "1 day until race day!";
+    countdownText.textContent =
+      "1 day until race day!";
+
   } else if (diffDays === 0) {
-    countdownText.textContent = "Race day is today!";
+    countdownText.textContent =
+      "Race day is today!";
+
   } else {
-    countdownText.textContent = "Race day has passed — you did it!";
+    countdownText.textContent =
+      "Race day has passed — you did it!";
   }
 }
 
+
+// ============================================================
+// AUTOMATIC CURRENT-MONTH CALENDAR
+// ============================================================
+
 function buildCalendar() {
-  const calendar = document.getElementById("calendar");
-  const calendarMonth = document.getElementById("calendar-month");
+  const calendar =
+    document.getElementById("calendar");
+
+  const calendarMonth =
+    document.getElementById("calendar-month");
 
   if (!calendar || !calendarMonth) return;
 
   calendar.innerHTML = "";
 
   const today = new Date();
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
+
+  const currentYear =
+    today.getFullYear();
+
+  const currentMonth =
+    today.getMonth();
 
   const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
   ];
 
   calendarMonth.textContent =
     `${monthNames[currentMonth]} ${currentYear}`;
 
   const firstDay =
-    new Date(currentYear, currentMonth, 1).getDay();
+    new Date(
+      currentYear,
+      currentMonth,
+      1
+    ).getDay();
 
   const daysInMonth =
-    new Date(currentYear, currentMonth + 1, 0).getDate();
+    new Date(
+      currentYear,
+      currentMonth + 1,
+      0
+    ).getDate();
 
+
+  // Blank cells before first day of month
   for (let i = 0; i < firstDay; i++) {
-    const emptyCell = document.createElement("div");
+    const emptyCell =
+      document.createElement("div");
 
     emptyCell.classList.add(
       "calendar-day",
@@ -183,10 +235,20 @@ function buildCalendar() {
     calendar.appendChild(emptyCell);
   }
 
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dayCell = document.createElement("div");
 
-    dayCell.classList.add("calendar-day");
+  // Actual calendar days
+  for (
+    let day = 1;
+    day <= daysInMonth;
+    day++
+  ) {
+    const dayCell =
+      document.createElement("div");
+
+    dayCell.classList.add(
+      "calendar-day"
+    );
+
     dayCell.textContent = day;
 
     const isToday =
@@ -198,6 +260,7 @@ function buildCalendar() {
       day === raceDate.getDate() &&
       currentMonth === raceDate.getMonth() &&
       currentYear === raceDate.getFullYear();
+
 
     if (isToday) {
       dayCell.classList.add("today");
@@ -212,19 +275,36 @@ function buildCalendar() {
 }
 
 
-// Baking flip card
-document.querySelectorAll(".flip-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const isFlipped =
-      card.classList.toggle("is-flipped");
+// ============================================================
+// BAKING FLIP CARDS
+// ============================================================
 
-    card.setAttribute(
-      "aria-pressed",
-      String(isFlipped)
+document
+  .querySelectorAll(".flip-card")
+  .forEach((card) => {
+
+    card.addEventListener(
+      "click",
+      () => {
+
+        const isFlipped =
+          card.classList.toggle(
+            "is-flipped"
+          );
+
+        card.setAttribute(
+          "aria-pressed",
+          String(isFlipped)
+        );
+      }
     );
-  });
-});
 
+  });
+
+
+// ============================================================
+// INITIALIZE PAGE
+// ============================================================
 
 updateRaceCountdown();
 buildCalendar();
