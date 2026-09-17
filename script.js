@@ -1,5 +1,5 @@
 // ============================================================
-// TAB NAVIGATION + CHROME BACK/FORWARD BUTTON
+// TAB NAVIGATION + BROWSER BACK/FORWARD
 // ============================================================
 
 const tabButtons = document.querySelectorAll(".tab-button");
@@ -10,12 +10,12 @@ function showTab(tabId, addToHistory = true) {
 
   if (!selectedTab) return;
 
-  // Hide all tabs
+  // Hide all tab content
   tabContents.forEach(content => {
     content.classList.remove("active");
   });
 
-  // Deactivate all buttons
+  // Remove active state from all buttons
   tabButtons.forEach(button => {
     button.classList.remove("active");
   });
@@ -23,14 +23,14 @@ function showTab(tabId, addToHistory = true) {
   // Show selected tab
   selectedTab.classList.add("active");
 
-  // Highlight selected button
+  // Highlight corresponding button
   tabButtons.forEach(button => {
     if (button.dataset.tab === tabId) {
       button.classList.add("active");
     }
   });
 
-  // Add tab to browser history
+  // Add this tab to browser history
   if (addToHistory) {
     history.pushState(
       { tab: tabId },
@@ -41,7 +41,7 @@ function showTab(tabId, addToHistory = true) {
 }
 
 
-// Clicking a tab
+// Clicking one of your tabs
 tabButtons.forEach(button => {
   button.addEventListener("click", () => {
     showTab(button.dataset.tab);
@@ -49,19 +49,28 @@ tabButtons.forEach(button => {
 });
 
 
-// Chrome Back / Forward buttons
+// Chrome Back / Forward button
 window.addEventListener("popstate", () => {
   const tabId =
-    window.location.hash.substring(1) || "home";
+    window.location.hash.substring(1) || "about";
 
   showTab(tabId, false);
 });
 
 
-// Load correct tab if page is opened with a hash
+// When the website initially loads
 window.addEventListener("DOMContentLoaded", () => {
   const tabId =
-    window.location.hash.substring(1) || "home";
+    window.location.hash.substring(1) || "about";
+
+  showTab(tabId, false);
+
+  history.replaceState(
+    { tab: tabId },
+    "",
+    `#${tabId}`
+  );
+});
 
   showTab(tabId, false);
 
