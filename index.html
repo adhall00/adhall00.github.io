@@ -1,193 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Anna's Website</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/jpg" href="images/favicon_cloud.jpg">
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
+  <link
+    rel="icon"
+    type="image/jpg"
+    href="images/favicon_cloud.jpg"
+  >
 </head>
+
+
 <body>
-  <!-- Floating clouds -->
+
+  <!-- =====================================================
+       FLOATING CLOUDS
+       ===================================================== -->
+
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
   <div class="cloud cloud4"></div>
 
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
   <header>
-    <h1>Anna's Corner of the Internet ☁️</h1>
-    <p class="subtitle">science, baking, swimming, and a little whimsy</p>
+
+    <h1>
+      Anna's Corner of the Internet ☁️
+    </h1>
+
+    <p class="subtitle">
+      science, baking, swimming, and a little whimsy
+    </p>
+
   </header>
 
- <nav class="tabs">
-  <button class="tab-button active" data-tab="about">All About Anna</button>
-  <button class="tab-button" data-tab="baking">Baking my way through Grad School</button>
-  <button class="tab-button" data-tab="triathlon">My Triathlon Journey</button>
-  <button class="tab-button" data-tab="publications">Publications</button>
-  <button class="tab-button" data-tab="resume">Resume/CV</button>
-  <button class="tab-button" data-tab="gallery">Photo Gallery</button>
-  <button class="tab-button" data-tab="fu-liou">Fu-Liou Model</button>
-</nav>
 
-  <main>
-    <section id="about" class="tab-content active">
-      <h2>All About Anna</h2>
-      <p>
-        Hi! I’m Anna, a fourth year graduate student at the University of Washington in the Atmospheric and Climate Science Department studying
-        the stratosphere–troposphere exchange, ozone transport, and climate variability.
-        I also love baking, endurance sports, and building a life full of curiosity.
-      </p>
-      <p>
-        This website is a little mix of my academic life and the things that keep me grounded outside of research.
-      </p>
-      </p>
-      contact me: ahall25@uw.edu
-      </p>
-      <figure>
-        <img src="images/frontpagepic.jpeg" alt="Anna Hall" class="frontpage-pic">          
-        <!-- <figcaption>Me!</figcaption> -->
-        </figure>
-    </section>
+  <!-- =====================================================
+       NAVIGATION TABS
+       ===================================================== -->
 
-    <section id="baking" class="tab-content">
-  <div class="baking-intro">
-    <div class="baking-text">
-      <h2>Baking My Way Through Grad School</h2>
-
-      <p>
-        On June 1, 2026, I became a PhD candidate, officially starting my
-        12-month countdown to graduation. I have two more papers to write
-        and a whole hoard of stress to get through.
-      </p>
-
-      <p>
-        One of the ways I relieve stress is through baking. I am going to
-        post everything I bake here, along with little stories about what
-        was stressing me out at the time. The level of stress is probably
-        correlated with how complicated the bake is. Let’s see how this goes...
-      </p>
-    </div>
+  <nav class="tabs">
 
     <button
-      class="flip-card"
-      type="button"
-      aria-label="Flip the baking card"
-      aria-pressed="false"
+      class="tab-button active"
+      data-tab="about"
     >
-      <span class="flip-card-inner">
-        <span class="flip-card-front">
-                <img
-                  src="images/ChocolateCupcakeCoffeeIcing.jpg"
-                  alt="Teary Miss You inspired chocolate cupcake with espresso-infused whipped topping"
-                >
-              
-                <span class="cupcake-month">July</span>
-                <span class="flip-hint">Click to flip</span>
-              </span>
-
-        <span class="flip-card-back">
-          <span class="card-content">
-            <h3>Chocolate Cupcake with Espresso Infused Whipped Topping</h3>
-
-            <p>
-              </p>Date: July 30th 2026<p>
-              <p>Stress Level: Defcon3<p>
-            </p>
-
-            <p>
-              I dont know if you have ever tried to download ERA5 daily data, but this global queue is no joke! I have
-              had to ask for an extension on my first round of revisions simply because of the glacial pace of this download.
-              The anticipation to get this re-submitted in a timely manner is keeping me up at night. It's hard to adhere to arbitrary deadlines.
-            </p>
-          </span>
-        </span>
-      </span>
+      All About Anna
     </button>
-       <button
-      class="flip-card"
-      type="button"
-      aria-label="Flip the baking card"
-      aria-pressed="false"
+
+    <button
+      class="tab-button"
+      data-tab="baking"
     >
-      <span class="flip-card-inner">
-        <span class="flip-card-front">
-                <img
-                  src="images/cookies.jpg"
-                  alt="Double Chip: Chocolate Chip Potato Chip Cookies"
-                >
-              
-                <span class="cupcake-month">August</span>
-                <span class="flip-hint">Click to flip</span>
-              </span>
-
-        <span class="flip-card-back">
-          <span class="card-content">
-            <h3>Double Chip: Chocolate Chip Potato Chip Cookies</h3>
-
-            <p>
-              </p>Date: August 29th 2026<p>
-              <p>Stress Level: Defcon4<p>
-            </p>
-
-            <p>
-              Its not so bad right now, I just have a fear of becoming one-dimensional and needed a reminder of my humanity
-            </p>
-          </span>
-        </span>
-      </span>
+      Baking my way through Grad School
     </button>
-           <button
-      class="flip-card"
-      type="button"
-      aria-label="Flip the baking card"
-      aria-pressed="false"
+
+    <button
+      class="tab-button"
+      data-tab="triathlon"
     >
-      <span class="flip-card-inner">
-        <span class="flip-card-front">
-                <img
-                  src="images/cookies.jpg"
-                  alt="Double Chip: Chocolate Chip Potato Chip Cookies"
-                >
-              
-                <span class="cupcake-month">September</span>
-                <span class="flip-hint">Click to flip</span>
-              </span>
-
-        <span class="flip-card-back">
-          <span class="card-content">
-            <h3>Double Chip: Chocolate Chip Potato Chip Cookies</h3>
-
-            <p>
-              </p>Date: September 18th 2026<p>
-              <p>Stress Level: In the throes of imposter syndrome<p>
-            </p>
-
-            <p>
-              I am not sleeping and I am kind of not eating but it is socially frowned upon to pick up alcohol or hard drugs, so I am clocking 15k steps and 2mi of swimming a day.
-            </p>
-          </span>
-        </span>
-      </span>
+      My Triathlon Journey
     </button>
-  </div>
-</section>
 
-    <section id="triathlon" class="tab-content">
-      <h2>My Triathlon Journey</h2>
+    <button
+      class="tab-button"
+      data-tab="publications"
+    >
+      Publications
+    </button>
+
+    <button
+      class="tab-button"
+      data-tab="resume"
+    >
+      Resume/CV
+    </button>
+
+    <button
+      class="tab-button"
+      data-tab="gallery"
+    >
+      Photo Gallery
+    </button>
+
+    <button
+      class="tab-button"
+      data-tab="fu-liou"
+    >
+      Fu-Liou Model
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         ABOUT
+         =================================================== -->
+
+    <section
+      id="about"
+      class="tab-content active"
+    >
+
+      <h2>
+        All About Anna
+      </h2>
+
       <p>
-        I’m also on a triathlon journey! Admittedly, I swam in college so we have that going for us. I started my running journey in September 2025
-        and I consider biking to be easy because it's just sitting down. I will post my training updates here if I do a cool exercise or finally
-        compete in my first triathlon.
+        Hi! I’m Anna, a fourth year graduate student at the
+        University of Washington in the Atmospheric and Climate
+        Science Department studying the stratosphere–troposphere
+        exchange, ozone transport, and climate variability.
+        I also love baking, endurance sports, and building a life
+        full of curiosity.
       </p>
-    
-      <div class="race-countdown-card">
-        <h3>Race Day Countdown 🏊‍♀️🚴‍♀️🏃‍♀️</h3>
-        <p id="countdown-text">Loading countdown...</p>
+
+      <p>
+        This website is a little mix of my academic life and the
+        things that keep me grounded outside of research.
+      </p>
+
+      <p>
+        Contact me: ahall25@uw.edu
+      </p>
+
+      <figure>
+
+        <img
+          src="images/frontpagepic.jpeg"
+          alt="Anna Hall"
+          class="frontpage-pic"
+        >
+
+        <!--
+        <figcaption>
+          Me!
+        </figcaption>
+        -->
+
+      </figure>
+
+    </section>
+
+
+    <!-- ===================================================
+         BAKING
+         =================================================== -->
+
+    <section
+      id="baking"
+      class="tab-content"
+    >
+
+      <div class="baking-intro">
+
+        <div class="baking-text">
+
+          <h2>
+            Baking My Way Through Grad School
+          </h2>
+
+          <p>
+            On June 1, 2026, I became a PhD candidate, officially
+            starting my 12-month countdown to graduation. I have
+            two more papers to write and a whole hoard of stress
+            to get through.
+          </p>
+
+          <p>
+            One of the ways I relieve stress is through baking.
+            I am going to post everything I bake here, along with
+            little stories about what was stressing me out at the
+            time. The level of stress is probably correlated with
+            how complicated the bake is. Let’s see how this goes...
+          </p>
+
+        </div>
+
+
+        <!-- JULY CARD -->
+
+        <button
+          class="flip-card"
+          type="button"
+          aria-label="Flip the July baking card"
+          aria-pressed="false"
+        >
+
+          <span class="flip-card-inner">
+
+            <span class="flip-card-front">
+
+              <img
+                src="images/ChocolateCupcakeCoffeeIcing.jpg"
+                alt="Chocolate cupcake with espresso-infused whipped topping"
+              >
+
+              <span class="cupcake-month">
+                July
+              </span>
+
+              <span class="flip-hint">
+                Click to flip
+              </span>
+
+            </span>
+
+
+            <span class="flip-card-back">
+
+              <span class="card-content">
+
+                <h3>
+                  Chocolate Cupcake with Espresso Infused
+                  Whipped Topping
+                </h3>
+
+                <p>
+                  Date: July 30th 2026
+                </p>
+
+                <p>
+                  Stress Level: Defcon3
+                </p>
+
+                <p>
+                  I dont know if you have ever tried to download
+                  ERA5 daily data, but this global queue is no joke!
+                  I have had to ask for an extension on my first
+                  round of revisions simply because of the glacial
+                  pace of this download. The anticipation to get
+                  this re-submitted in a timely manner is keeping
+                  me up at night. It's hard to adhere to arbitrary
+                  deadlines.
+                </p>
+
+              </span>
+
+            </span>
+
+          </span>
+
+        </button>
+
+
+        <!-- AUGUST CARD -->
+
+        <button
+          class="flip-card"
+          type="button"
+          aria-label="Flip the August baking card"
+          aria-pressed="false"
+        >
+
+          <span class="flip-card-inner">
+
+            <span class="flip-card-front">
+
+              <img
+                src="images/cookies.jpg"
+                alt="Double Chip chocolate chip potato chip cookies"
+              >
+
+              <span class="cupcake-month">
+                August
+              </span>
+
+              <span class="flip-hint">
+                Click to flip
+              </span>
+
+            </span>
+
+
+            <span class="flip-card-back">
+
+              <span class="card-content">
+
+                <h3>
+                  Double Chip: Chocolate Chip Potato Chip Cookies
+                </h3>
+
+                <p>
+                  Date: August 29th 2026
+                </p>
+
+                <p>
+                  Stress Level: Defcon4
+                </p>
+
+                <p>
+                  Its not so bad right now, I just have a fear of
+                  becoming one-dimensional and needed a reminder
+                  of my humanity.
+                </p>
+
+              </span>
+
+            </span>
+
+          </span>
+
+        </button>
+
+
+        <!-- SEPTEMBER CARD -->
+
+        <button
+          class="flip-card"
+          type="button"
+          aria-label="Flip the September baking card"
+          aria-pressed="false"
+        >
+
+          <span class="flip-card-inner">
+
+            <span class="flip-card-front">
+
+              <img
+                src="images/cookies.jpg"
+                alt="September bake"
+              >
+
+              <span class="cupcake-month">
+                September
+              </span>
+
+              <span class="flip-hint">
+                Click to flip
+              </span>
+
+            </span>
+
+
+            <span class="flip-card-back">
+
+              <span class="card-content">
+
+                <h3>
+                  Double Chip: Chocolate Chip Potato Chip Cookies
+                </h3>
+
+                <p>
+                  Date: September 18th 2026
+                </p>
+
+                <p>
+                  Stress Level: In the throes of imposter syndrome
+                </p>
+
+                <p>
+                  I am not sleeping and I am kind of not eating
+                  but it is socially frowned upon to pick up
+                  alcohol or hard drugs, so I am clocking 15k
+                  steps and 2mi of swimming a day.
+                </p>
+
+              </span>
+
+            </span>
+
+          </span>
+
+        </button>
+
       </div>
-    
+
+    </section>
+
+
+    <!-- ===================================================
+         TRIATHLON
+         =================================================== -->
+
+    <section
+      id="triathlon"
+      class="tab-content"
+    >
+
+      <h2>
+        My Triathlon Journey
+      </h2>
+
+      <p>
+        I’m also on a triathlon journey! Admittedly, I swam in
+        college so we have that going for us. I started my running
+        journey in September 2025 and I consider biking to be easy
+        because it's just sitting down. I will post my training
+        updates here if I do a cool exercise or finally compete
+        in my first triathlon.
+      </p>
+
+
+      <div class="race-countdown-card">
+
+        <h3>
+          Race Day Countdown 🏊‍♀️🚴‍♀️🏃‍♀️
+        </h3>
+
+        <p id="countdown-text">
+          Loading countdown...
+        </p>
+
+      </div>
+
+
       <div class="calendar-card">
-        <h3 id="calendar-month">Month Year</h3>
+
+        <h3 id="calendar-month">
+          Month Year
+        </h3>
+
+
         <div class="calendar-grid calendar-days">
+
           <div>Sun</div>
           <div>Mon</div>
           <div>Tue</div>
@@ -195,124 +446,400 @@
           <div>Thu</div>
           <div>Fri</div>
           <div>Sat</div>
+
         </div>
-        <div id="calendar" class="calendar-grid"></div>
+
+
+        <div
+          id="calendar"
+          class="calendar-grid"
+        ></div>
+
       </div>
+
     </section>
 
-    <section id="publications" class="tab-content">
-      <h2>Publications</h2>
-      <p>Here are some of my publications and research outputs:</p>
-    
+
+    <!-- ===================================================
+         PUBLICATIONS
+         =================================================== -->
+
+    <section
+      id="publications"
+      class="tab-content"
+    >
+
+      <h2>
+        Publications
+      </h2>
+
+      <p>
+        Here are some of my publications and research outputs:
+      </p>
+
+
       <ol class="publications-list">
+
+
         <li>
-          <strong>Hall, A.</strong>; Dong, C.; Fu, Q.; Solomon, S. (2026).
-          <em>Interannual Variability in the Stratosphere-Troposphere Exchange of Air Mass and Ozone in Chemistry Climate Models.</em>
+
+          <strong>
+            Hall, A.
+          </strong>;
+
+          Dong, C.; Fu, Q.; Solomon, S. (2026).
+
+          <em>
+            Interannual Variability in the
+            Stratosphere-Troposphere Exchange of Air Mass and
+            Ozone in Chemistry Climate Models.
+          </em>
+
           Accepted @ MDPI Climate Journal.
+
         </li>
-    
+
+
         <li>
-          Mudhar, R.; <strong>Hall, A.</strong>; Huang, J.; Lee, R.W.; Palmeiro, F.M. (2026).
-          <em>QBOI-SNAP-QUOCA Workshop: Improved Simulations of the Stratosphere for Better Predictions of Weather, Climate and Extreme Events.</em>
-          <em>Weather</em>, 81, 15–17.
-          doi:<a href="https://doi.org/10.1002/wea.7788" target="_blank">10.1002/wea.7788</a>.
+
+          Mudhar, R.;
+
+          <strong>
+            Hall, A.
+          </strong>;
+
+          Huang, J.; Lee, R.W.; Palmeiro, F.M. (2026).
+
+          <em>
+            QBOI-SNAP-QUOCA Workshop: Improved Simulations of
+            the Stratosphere for Better Predictions of Weather,
+            Climate and Extreme Events.
+          </em>
+
+          <em>
+            Weather
+          </em>,
+          81, 15–17.
+
+          doi:
+
+          <a
+            href="https://doi.org/10.1002/wea.7788"
+            target="_blank"
+          >
+            10.1002/wea.7788
+          </a>.
+
         </li>
-    
+
+
         <li>
-          <strong>Hall, A.</strong>; Fu, Q.; Dong, C. (2025).
-          <em>Revisiting the Stratosphere–Troposphere Exchange of Air Mass and Ozone Based on Reanalyses and Observations.</em>
-          <em>Atmosphere</em>, 16, 1050.
-          doi:<a href="https://doi.org/10.3390/atmos16091050" target="_blank">10.3390/atmos16091050</a>.
+
+          <strong>
+            Hall, A.
+          </strong>;
+
+          Fu, Q.; Dong, C. (2025).
+
+          <em>
+            Revisiting the Stratosphere–Troposphere Exchange of
+            Air Mass and Ozone Based on Reanalyses and
+            Observations.
+          </em>
+
+          <em>
+            Atmosphere
+          </em>,
+          16, 1050.
+
+          doi:
+
+          <a
+            href="https://doi.org/10.3390/atmos16091050"
+            target="_blank"
+          >
+            10.3390/atmos16091050
+          </a>.
+
         </li>
-    
+
+
         <li>
-          Wang, M.; Fu, Q.; <strong>Hall, A.</strong>; Sweeney, A. (2023).
-          <em>Stratosphere-Troposphere Exchanges of Air Mass and Ozone Concentrations From ERA5 and MERRA2: Annual-Mean Climatology, Seasonal Cycle, and Interannual Variability.</em>
-          <em>JGR Atmospheres</em>, 128, e2023JD039270.
-          doi:<a href="https://doi.org/10.1029/2023JD039270" target="_blank">10.1029/2023JD039270</a>.
+
+          Wang, M.; Fu, Q.;
+
+          <strong>
+            Hall, A.
+          </strong>;
+
+          Sweeney, A. (2023).
+
+          <em>
+            Stratosphere-Troposphere Exchanges of Air Mass and
+            Ozone Concentrations From ERA5 and MERRA2:
+            Annual-Mean Climatology, Seasonal Cycle, and
+            Interannual Variability.
+          </em>
+
+          <em>
+            JGR Atmospheres
+          </em>,
+          128, e2023JD039270.
+
+          doi:
+
+          <a
+            href="https://doi.org/10.1029/2023JD039270"
+            target="_blank"
+          >
+            10.1029/2023JD039270
+          </a>.
+
         </li>
+
       </ol>
+
     </section>
 
-    <section id="resume" class="tab-content">
-      <h2>Resume / CV</h2>
+
+    <!-- ===================================================
+         RESUME
+         =================================================== -->
+
+    <section
+      id="resume"
+      class="tab-content"
+    >
+
+      <h2>
+        Resume / CV
+      </h2>
+
       <p>
-        You can view my CV below, download a copy, or connect with me on LinkedIn.
+        You can view my CV below, download a copy, or connect
+        with me on LinkedIn.
       </p>
-    
+
+
       <p class="resume-buttons">
-        <a href="HallResumeSummer2026.pdf" download class="cv-link">Download My CV</a>
-        <a href="https://www.linkedin.com/in/anna-hall-121189204/" target="_blank" rel="noopener noreferrer" class="cv-link">LinkedIn</a>
+
+        <a
+          href="HallResumeSummer2026.pdf"
+          download
+          class="cv-link"
+        >
+          Download My CV
+        </a>
+
+
+        <a
+          href="https://www.linkedin.com/in/anna-hall-121189204/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cv-link"
+        >
+          LinkedIn
+        </a>
+
       </p>
-    
+
+
       <div class="pdf-container">
-        <iframe src="HallResumeSummer2026.pdf" title="Anna Hall CV"></iframe>
+
+        <iframe
+          src="HallResumeSummer2026.pdf"
+          title="Anna Hall CV"
+        ></iframe>
+
       </div>
+
     </section>
-    <section id="gallery" class="tab-content">
-      <h2>Photo Gallery</h2>
-      <p>A little scrapbook of conferences, research, friends, and life lately.</p>
-    
+
+
+    <!-- ===================================================
+         PHOTO GALLERY
+         =================================================== -->
+
+    <section
+      id="gallery"
+      class="tab-content"
+    >
+
+      <h2>
+        Photo Gallery
+      </h2>
+
+      <p>
+        A little scrapbook of conferences, research, friends,
+        and life lately.
+      </p>
+
+
       <div class="gallery">
+
+
         <figure>
-          <img src="images/mariners_2026_ben_spencer.jpg" alt="Mariners Game 2026">
-          <figcaption>Department Mariners Game 2026 (Seattle, WA)</figcaption>
+
+          <img
+            src="images/mariners_2026_ben_spencer.jpg"
+            alt="Mariners Game 2026"
+          >
+
+          <figcaption>
+            Department Mariners Game 2026 (Seattle, WA)
+          </figcaption>
+
         </figure>
-        
+
+
         <figure>
-          <img src="images/ams2024_presenting.jpeg" alt="Anna presenting at AMS 2024">
-          <figcaption>AMS 2024 (Baltimore, MD)</figcaption>
+
+          <img
+            src="images/ams2024_presenting.jpeg"
+            alt="Anna presenting at AMS 2024"
+          >
+
+          <figcaption>
+            AMS 2024 (Baltimore, MD)
+          </figcaption>
+
         </figure>
-    
+
+
         <figure>
-          <img src="images/ams2024_raul_lily_valeria.JPG" alt="AMS 2024 with Raul, Lily, and Valeria">
-          <figcaption>AMS 2024 (Baltimore, MD)</figcaption>
+
+          <img
+            src="images/ams2024_raul_lily_valeria.JPG"
+            alt="AMS 2024 with Raul, Lily, and Valeria"
+          >
+
+          <figcaption>
+            AMS 2024 (Baltimore, MD)
+          </figcaption>
+
         </figure>
-    
+
+
         <figure>
-          <img src="images/ams2025_alton_valeria.JPG" alt="AMS 2025 with Alton and Valeria">
-          <figcaption>AMS 2024 (Baltimore, MD)</figcaption>
+
+          <img
+            src="images/ams2025_alton_valeria.JPG"
+            alt="AMS 2025 with Alton and Valeria"
+          >
+
+          <figcaption>
+            AMS 2024 (Baltimore, MD)
+          </figcaption>
+
         </figure>
-    
+
+
         <figure>
-          <img src="images/boulder_aodhan_cong.jpg" alt="Boulder trip with Aodhan and Cong">
-          <figcaption>GNSSRSC 2024 (Boulder, CO)</figcaption>
+
+          <img
+            src="images/boulder_aodhan_cong.jpg"
+            alt="Boulder trip with Aodhan and Cong"
+          >
+
+          <figcaption>
+            GNSSRSC 2024 (Boulder, CO)
+          </figcaption>
+
         </figure>
-    
+
+
         <figure>
-          <img src="images/tasti_aodhan.jpg" alt="Tasti with Aodhan">
-          <figcaption>Tasti 2023 (Taipei, Taiwan)</figcaption>
+
+          <img
+            src="images/tasti_aodhan.jpg"
+            alt="Tasti with Aodhan"
+          >
+
+          <figcaption>
+            Tasti 2023 (Taipei, Taiwan)
+          </figcaption>
+
         </figure>
-    
+
+
         <figure>
-          <img src="images/tasti_qiang_aodhan.jpeg" alt="Tasti with Qiang and Aodhan">
-          <figcaption>Tasti 2023 (Taipei, Taiwan)</figcaption>
+
+          <img
+            src="images/tasti_qiang_aodhan.jpeg"
+            alt="Tasti with Qiang and Aodhan"
+          >
+
+          <figcaption>
+            Tasti 2023 (Taipei, Taiwan)
+          </figcaption>
+
         </figure>
+
+
       </div>
-<section id="fu-liou" class="tab-content">
-  <div class="fu-liou-model-intro">
-    <div class="model-text">
 
-      <h2>How to run the Fu-Liou Model</h2>
+    </section>
 
-      <p>
-        I work with Dr. Qiang Fu (the Fu part of Fu-Liou). I am going to try
-        and demonstrate how to run the Fu-Liou RTM.
-        I don't really know how to do this yet, but we will learn together...
-      </p>
 
-      <p>
-        Welcome to "How long does it actually take?" It is 2 pm on September 17th, 2026.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- ===================================================
+         FU-LIOU MODEL
+         =================================================== -->
+
+    <section
+      id="fu-liou"
+      class="tab-content"
+    >
+
+      <div class="fu-liou-model-intro">
+
+        <div class="model-text">
+
+          <h2>
+            How to run the Fu-Liou Model
+          </h2>
+
+          <p>
+            I work with Dr. Qiang Fu (the Fu part of Fu-Liou).
+            I am going to try and demonstrate how to run the
+            Fu-Liou RTM. I don't really know how to do this yet,
+            but we will learn together...
+          </p>
+
+          <p>
+            Welcome to "How long does it actually take?"
+            It is 2 pm on September 17th, 2026.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
   <footer>
-    <p>Made with ☁️ and curiosity</p>
+
+    <p>
+      Made with ☁️ and curiosity
+    </p>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
   <script src="script.js"></script>
+
+
 </body>
+
 </html>
