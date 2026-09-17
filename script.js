@@ -163,3 +163,45 @@ document.querySelectorAll(".flip-card").forEach((card) => {
 
 updateRaceCountdown();
 buildCalendar();
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
+
+function showTab(tabId, addToHistory = true) {
+  tabButtons.forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.tab === tabId
+    );
+  });
+
+  tabContents.forEach(content => {
+    content.classList.toggle(
+      "active",
+      content.id === tabId
+    );
+  });
+
+  if (addToHistory) {
+    history.pushState(
+      { tab: tabId },
+      "",
+      `#${tabId}`
+    );
+  }
+}
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    showTab(button.dataset.tab);
+  });
+});
+
+window.addEventListener("popstate", () => {
+  const tabId = window.location.hash.substring(1) || "home";
+  showTab(tabId, false);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const tabId = window.location.hash.substring(1) || "home";
+  showTab(tabId, false);
+});
