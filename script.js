@@ -1,140 +1,17 @@
-// ============================================================
-// TAB NAVIGATION + CHROME BACK/FORWARD
-// ============================================================
-
-function showTab(tabId, addToHistory = true) {
-
-  const contents =
-    document.querySelectorAll(".tab-content");
-
-  const buttons =
-    document.querySelectorAll(".tab-button");
-
-  const selectedTab =
-    document.getElementById(tabId);
-
-
-  // Safety check
-  if (!selectedTab) {
-    console.error(
-      `Could not find tab with id: ${tabId}`
-    );
-
-    return;
-  }
-
-
-  // ----------------------------------------------------------
-  // Hide all tab sections
-  // ----------------------------------------------------------
-
-  contents.forEach(content => {
-
-    content.classList.remove("active");
-
-  });
-
-
-  // ----------------------------------------------------------
-  // Remove active styling from all buttons
-  // ----------------------------------------------------------
-
-  buttons.forEach(button => {
-
-    button.classList.remove("active");
-
-  });
-
-
-  // ----------------------------------------------------------
-  // Show selected tab
-  // ----------------------------------------------------------
-
-  selectedTab.classList.add("active");
-
-
-  // ----------------------------------------------------------
-  // Highlight corresponding navigation button
-  // ----------------------------------------------------------
-
-  buttons.forEach(button => {
-
-    if (button.dataset.tab === tabId) {
-
-      button.classList.add("active");
-
-    }
-
-  });
-
-
-  // ----------------------------------------------------------
-  // Add tab change to browser history
-  // ----------------------------------------------------------
-
-  if (
-    addToHistory &&
-    window.location.hash !== `#${tabId}`
-  ) {
-
-    history.pushState(
-      {
-        tab: tabId
-      },
-      "",
-      `#${tabId}`
-    );
-
-  }
-
+// Preserve links to the original single-page tabs, including browser history.
+function followLegacyTabLink() {
+  const routes = {
+    about: 'index.html', baking: 'baking.html', triathlon: 'triathlon.html',
+    publications: 'publications.html', resume: 'resume.html', gallery: 'gallery.html',
+    'fu-liou': 'learn/fu-liou.html', learn: 'learn.html'
+  };
+  const filename = window.location.pathname.split('/').pop();
+  if (filename && filename !== 'index.html') return;
+  const destination = routes[window.location.hash.slice(1)];
+  if (destination) window.location.replace(new URL(destination, window.location.href));
 }
-
-
-// ============================================================
-// CHROME BACK / FORWARD BUTTON
-// ============================================================
-
-window.addEventListener(
-  "popstate",
-  () => {
-
-    const tabId =
-      window.location.hash.substring(1) ||
-      "about";
-
-    showTab(
-      tabId,
-      false
-    );
-
-  }
-);
-
-
-// ============================================================
-// INITIAL TAB WHEN WEBSITE LOADS
-// ============================================================
-
-const startingTab =
-  window.location.hash.substring(1) ||
-  "about";
-
-
-showTab(
-  startingTab,
-  false
-);
-
-
-// Establish initial browser-history entry
-history.replaceState(
-  {
-    tab: startingTab
-  },
-  "",
-  `#${startingTab}`
-);
-
+followLegacyTabLink();
+window.addEventListener('hashchange', followLegacyTabLink);
 
 // ============================================================
 // CLOUD BOUNCING ANIMATION
@@ -557,3 +434,4 @@ document
 updateRaceCountdown();
 
 buildCalendar();
+

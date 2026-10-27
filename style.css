@@ -611,3 +611,21 @@ footer {
 .model-text p:last-child {
   margin-bottom: 0;
 }
+
+
+/* Two navigation rows; each row wraps further on small screens. */
+.tabs { flex-direction: column; align-items: center; }
+.tab-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 100%; }
+a.tab-button { display: inline-block; text-decoration: none; color: inherit; text-align: center; font-family: inherit; }
+.tab-button:focus-visible, .lesson-button:focus-visible, .back-link:focus-visible { outline: 3px solid #4f6f9f; outline-offset: 4px; }
+.lesson-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.lesson-button { display: flex; align-items: center; justify-content: center; min-height: 72px; padding: 1rem; box-sizing: border-box; border: 2px solid white; border-radius: 20px; background: #fff7fb; color: #3d4b63; text-decoration: none; text-align: center; font-size: 1.05rem; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.25s ease, border-color 0.25s ease; }
+.lesson-button:hover { transform: translateY(-2px); border-color: #f4cce2; }
+.back-link { color: #4f6f9f; font-weight: bold; text-underline-offset: 4px; }
+.lesson-page { min-height: 240px; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .tab-row { gap: 0.4rem; }
+  a.tab-button { padding: 0.65rem 0.8rem; font-size: 0.85rem; }
+  .tab-content { padding: 1.25rem; }
+  .lesson-grid { grid-template-columns: 1fr; }
+}
